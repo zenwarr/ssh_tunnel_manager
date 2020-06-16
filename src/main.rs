@@ -55,11 +55,15 @@ fn parse_config(config: &str) -> anyhow::Result<Vec<PatternEntry>> {
                 match current_host {
                     Some(ref mut current_host) => {
                         current_host.options.insert(name.to_string(), value.to_string());
-                    },
+                    }
                     None => return Err(anyhow!("No Host directive before parameter {}", name))
                 }
             }
         }
+    }
+
+    if current_host.is_some() {
+        result.push(current_host.take().unwrap())
     }
 
     return Ok(result);
