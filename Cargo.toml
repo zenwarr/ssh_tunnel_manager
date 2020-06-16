@@ -1,0 +1,9 @@
+[package]
+name = "ssh_tunnels"
+version = "0.1.0"
+authors = ["zenwarr <zenw@yandex.ru>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
